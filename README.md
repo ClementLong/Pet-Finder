@@ -15,7 +15,7 @@ We use a special name convention for our branch:
 
 ### Commit 
 
-We use a special name convention for our cmmit: 
+We use a special name convention for our commit: 
 ```
 Scope : Feature
 ```
