@@ -1,0 +1,21 @@
+#left-side, #right-side {
+  height: 100vh;
+  background-color: #CE5993;
+}
+
+#table-content {
+  height: 100vh;
+}
+
+.table {
+  margin-top: 15em;
+}
+
+.caption {
+  text-align: center;
+  font-size: 2em;
+}
+
+.thead {
+  background-color: #FBF2E2;
+}
