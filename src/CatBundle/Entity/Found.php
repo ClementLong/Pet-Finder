@@ -3,12 +3,15 @@
 namespace CatBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Found
  *
  * @ORM\Table(name="found")
  * @ORM\Entity(repositoryClass="CatBundle\Repository\FoundRepository")
+ * @Vich\Uploadable
  */
 class Found
 {
@@ -57,19 +60,32 @@ class Found
     private $dateFound;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_add", type="date")
-     */
-    private $dateAdd;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="description", type="text")
      */
     private $description;
 
+    /**
+     * @var string
+     *
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName")
+     */
+    private $imageFile;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255)
+     */
+    private $imageName;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
 
     /**
      * Get id
@@ -202,30 +218,6 @@ class Found
     }
 
     /**
-     * Set dateAdd
-     *
-     * @param \DateTime $dateAdd
-     *
-     * @return Found
-     */
-    public function setDateAdd($dateAdd)
-    {
-        $this->dateAdd = $dateAdd;
-
-        return $this;
-    }
-
-    /**
-     * Get dateAdd
-     *
-     * @return \DateTime
-     */
-    public function getDateAdd()
-    {
-        return $this->dateAdd;
-    }
-
-    /**
      * Set description
      *
      * @param string $description
@@ -247,6 +239,58 @@ class Found
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set image file
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     *
+     * @return Found
+     */
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        if ($image) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get image file
+     *
+     * @return File|null
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * Set image name
+     *
+     * @param string $imageName
+     *
+     * @return Found
+     */
+    public function setImageName($imageName)
+    {
+        $this->imageName = $imageName;
+
+        return $this;
+    }
+
+    /**
+     * Get image name
+     *
+     * @return string|null
+     */
+    public function getImageName()
+    {
+        return $this->imageName;
     }
 }
 
