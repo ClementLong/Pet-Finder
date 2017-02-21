@@ -26,7 +26,6 @@
                 <td>{{ found.address }}</td>
                 <td>{{ found.contact }}</td>
                 <td>{% if found.dateFound %}{{ found.dateFound|date('Y-m-d') }}{% endif %}</td>
-                <td>{% if found.dateAdd %}{{ found.dateAdd|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ found.description }}</td>
                 <td><img src="{{ vich_uploader_asset(found, 'imageFile') }}" alt="{{ found.imageName }}"></td>
                 <td>

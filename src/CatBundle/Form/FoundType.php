@@ -20,7 +20,6 @@ class FoundType extends AbstractType
                 ->add('address')
                 ->add('contact')
                 ->add('dateFound')
-                ->add('dateAdd')
                 ->add('description')
                 ->add('imageFile', FileType::class)
         ;
