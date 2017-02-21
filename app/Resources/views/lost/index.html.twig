@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Losts list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Datelost</th>
+                <th>Dateadd</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lost in losts %}
+            <tr>
+                <td><a href="{{ path('lost_show', { 'id': lost.id }) }}">{{ lost.id }}</a></td>
+                <td>{{ lost.name }}</td>
+                <td>{{ lost.contact }}</td>
+                <td>{{ lost.country }}</td>
+                <td>{{ lost.city }}</td>
+                <td>{{ lost.address }}</td>
+                <td>{% if lost.dateLost %}{{ lost.dateLost|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if lost.dateAdd %}{{ lost.dateAdd|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ lost.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('lost_show', { 'id': lost.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lost_new') }}">Create a new lost</a>
+        </li>
+    </ul>
+{% endblock %}

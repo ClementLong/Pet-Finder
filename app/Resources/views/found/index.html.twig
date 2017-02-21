@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Founds list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Contact</th>
+                <th>Datefound</th>
+                <th>Dateadd</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for found in founds %}
+            <tr>
+                <td><a href="{{ path('found_show', { 'id': found.id }) }}">{{ found.id }}</a></td>
+                <td>{{ found.country }}</td>
+                <td>{{ found.city }}</td>
+                <td>{{ found.address }}</td>
+                <td>{{ found.contact }}</td>
+                <td>{% if found.dateFound %}{{ found.dateFound|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if found.dateAdd %}{{ found.dateAdd|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ found.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('found_show', { 'id': found.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('found_edit', { 'id': found.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('found_new') }}">Create a new found</a>
+        </li>
+    </ul>
+{% endblock %}
