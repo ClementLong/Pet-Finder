@@ -13,7 +13,6 @@
                 <th>City</th>
                 <th>Address</th>
                 <th>Datelost</th>
-                <th>Dateadd</th>
                 <th>Description</th>
                 <th>Actions</th>
             </tr>
@@ -28,7 +27,6 @@
                 <td>{{ lost.city }}</td>
                 <td>{{ lost.address }}</td>
                 <td>{% if lost.dateLost %}{{ lost.dateLost|date('Y-m-d') }}{% endif %}</td>
-                <td>{% if lost.dateAdd %}{{ lost.dateAdd|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ lost.description }}</td>
                 <td>
                     <ul>
