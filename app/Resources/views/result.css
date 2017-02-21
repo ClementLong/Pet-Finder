@@ -5,17 +5,23 @@
 
 #table-content {
   height: 100vh;
+  overflow: scroll;
 }
 
 .table {
-  margin-top: 15em;
+  margin-top: 20vh;
+  overflow: auto;
 }
 
 .caption {
-  text-align: center;
-  font-size: 2em;
+  text-align: right;
+  font-size: 1.4em;
 }
 
-.thead {
+th {
   background-color: #FBF2E2;
+}
+
+#table-content > table > tbody > tr> td > img {
+  width: 10em;
 }
