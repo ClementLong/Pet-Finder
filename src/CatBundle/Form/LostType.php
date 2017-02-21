@@ -5,6 +5,8 @@ namespace CatBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
 
 class LostType extends AbstractType
 {
@@ -13,7 +15,15 @@ class LostType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('contact')->add('country')->add('city')->add('address')->add('dateLost')->add('dateAdd')->add('description')        ;
+        $builder->add('name')
+                ->add('contact')
+                ->add('country')
+                ->add('city')
+                ->add('address')
+                ->add('dateLost')
+                ->add('description')
+                ->add('imageFile', FileType::class)
+        ;
     }
     
     /**
@@ -33,6 +43,4 @@ class LostType extends AbstractType
     {
         return 'catbundle_lost';
     }
-
-
 }

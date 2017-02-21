@@ -13,8 +13,8 @@
                 <th>City</th>
                 <th>Address</th>
                 <th>Datelost</th>
-                <th>Dateadd</th>
                 <th>Description</th>
+                <th>Image</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -28,8 +28,8 @@
                 <td>{{ lost.city }}</td>
                 <td>{{ lost.address }}</td>
                 <td>{% if lost.dateLost %}{{ lost.dateLost|date('Y-m-d') }}{% endif %}</td>
-                <td>{% if lost.dateAdd %}{{ lost.dateAdd|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ lost.description }}</td>
+                <td><img src="{{ vich_uploader_asset(lost, 'imageFile') }}" alt="{{ lost.imageName }}"></td>
                 <td>
                     <ul>
                         <li>

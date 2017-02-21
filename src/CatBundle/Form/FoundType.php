@@ -5,6 +5,8 @@ namespace CatBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
 
 class FoundType extends AbstractType
 {
@@ -13,7 +15,15 @@ class FoundType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('country')->add('city')->add('address')->add('contact')->add('dateFound')->add('dateAdd')->add('description')        ;
+        $builder->add('country')
+                ->add('city')
+                ->add('address')
+                ->add('contact')
+                ->add('dateFound')
+                ->add('dateAdd')
+                ->add('description')
+                ->add('imageFile', FileType::class)
+        ;
     }
     
     /**
