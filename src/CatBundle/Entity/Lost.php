@@ -11,6 +11,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *
  * @ORM\Table(name="lost")
  * @ORM\Entity(repositoryClass="CatBundle\Repository\LostRepository")
+ * @Vich\Uploadable
  */
 class Lost
 {
@@ -272,23 +273,17 @@ class Lost
     }
 
     /**
-     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
-     * of 'UploadedFile' is injected into this setter to trigger the  update. If this
-     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
-     * must be able to accept an instance of 'File' as the bundle will inject one here
-     * during Doctrine hydration.
+     * Set image file
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
      *
-     * @return Product
+     * @return Lost
      */
     public function setImageFile(File $image = null)
     {
         $this->imageFile = $image;
 
         if ($image) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
             $this->updatedAt = new \DateTimeImmutable();
         }
 
@@ -296,6 +291,8 @@ class Lost
     }
 
     /**
+     * Get image file
+     *
      * @return File|null
      */
     public function getImageFile()
@@ -304,9 +301,11 @@ class Lost
     }
 
     /**
+     * Set image name
+     *
      * @param string $imageName
      *
-     * @return Product
+     * @return Lost
      */
     public function setImageName($imageName)
     {
@@ -316,6 +315,8 @@ class Lost
     }
 
     /**
+     * Get image name
+     *
      * @return string|null
      */
     public function getImageName()
