@@ -1,16 +1,32 @@
 body {
   background: url('https://i.ytimg.com/vi/u9UaPvVs3hc/maxresdefault.jpg') no-repeat;
+  background-color: pink;
+}
+
+header {
+  /*position: absolute;*/
+  top: 0;
+  width: 100vw;
+  height: 80px;
+  padding-left: 40px;
+  background: red;
+  z-index: 99;
 }
 
 header h1 {
-  font-size: 3em;
+  font-size: 2em;
   color: black;
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 40px;
+  margin: 0;
+  line-height: 80px;
+  text-align: left;
+  display: inline-block;
 }
 
-header .search {
+.main__content {
+  padding-top: 50px;
+}
+
+.search {
   display: block !important;
   height: 50px !important;
   width: 50vw !important;
@@ -18,16 +34,26 @@ header .search {
   color: black;
   padding-left: 20px;
   border: 2px solid #F9DB79;
+  margin-top: 90px;
 }
 
-header ul {
+.button_container h4 {
+  background: blue;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  border: 5px;
+  color: white;
+}
+.main__content ul {
   display: block;
   width: 50vw;
   margin: auto;
 
 }
 
-header ul li {
+.main__content ul li {
   display: inline-block;
   color: blue;
   margin-right: 20px;
@@ -72,7 +98,7 @@ header ul li {
 #slider {
   position: relative;
   overflow: hidden;
-  margin: 20px auto 0 auto;
+  margin: 0px auto 0 auto;
   border-radius: 4px;
 }
 
@@ -145,4 +171,32 @@ a.control_next {
   width: 800px;
   margin: auto;
   margin-top: 30px;
+}
+
+.sub_container {
+  height: 300px;
+  border: 2px solid #F9DB79;
+  padding: 0;
+  margin-top: 50px;
+}
+
+.sub_container_header {
+  height: 30px;
+  width: 100%;
+  background: #F9DB79;
+}
+
+.sub_container_header h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.3em;
+  padding-left: 20px;
+  line-height: 25px;
+}
+
+footer {
+  margin-top: 80px;
+  width: 60vw;
+  height: 100px;
+  background: grey;
 }
