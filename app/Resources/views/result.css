@@ -9,19 +9,35 @@
   padding: 0px;
 }
 
+.go-back {
+  cursor: pointer;
+  color: #44529D;
+  position: absolute;
+  top: 8vh;
+  left: 5vw;
+}
+
 .table {
   margin-top: 10vh;
+  margin-bottom: 0px;
   overflow: auto;
 }
 
-.caption {
-  text-align: center;
-  letter-spacing: 0.1em;
-  font-size: 1.4em;
+.table-bordered {
+  border: 1px solid #F6D6A7;
 }
 
+.caption {
+  color: #EE6F21;
+  text-align: right;
+  margin-right: 2em;
+  font-size: 1.4em;
+}
 th {
-  background-color: #FBF2E2;
+  background-color: #FEE3BC;
+}
+td {
+  background-color: #FFF0DB;
 }
 
 #table-content > table > tbody > tr> td > img {
