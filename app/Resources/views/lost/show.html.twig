@@ -56,13 +56,15 @@
         <li>
             <a href="{{ path('lost_index') }}">Back to the list</a>
         </li>
-        <li>
-            <a href="{{ path('lost_edit', { 'id': lost.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+        {% if user.id == currentUserId %}
+            <li>
+                <a href="{{ path('lost_edit', { 'id': lost.id }) }}">Edit</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        {% endif %}
     </ul>
 {% endblock %}

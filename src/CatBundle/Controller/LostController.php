@@ -7,11 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
-use FOS\UserBundle\FOSUserEvents;
-use FOS\UserBundle\Event\GetResponseUserEvent;
-use FOS\UserBundle\Model\UserInterface;
-use FOS\UserBundle\Model\UserManagerInterface;
-use FOS\UserBundle\Model\UserManager;
 
 /**
  * Lost controller.
@@ -77,11 +72,18 @@ class LostController extends Controller
         $userManager = $this->get('fos_user.user_manager');
         $userId = $lost->getUserId();
         $user = $userManager->findUserBy(array('id'=> $userId));
+        if($this->getUser()) {
+            $currentUser = $this->getUser();
+            $currentUserId = $currentUser->getId();
+        } else {
+            $currentUserId = -1;
+        }
 
         return $this->render('lost/show.html.twig', array(
             'lost' => $lost,
             'delete_form' => $deleteForm->createView(),
             'user' => $user,
+            'currentUserId' => $currentUserId,
         ));
     }
 
