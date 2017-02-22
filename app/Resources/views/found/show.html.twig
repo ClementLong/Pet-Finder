@@ -30,8 +30,12 @@
                 <td>{% if found.dateFound %}{{ found.dateFound|date('Y-m-d') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Dateadd</th>
-                <td>{% if found.dateAdd %}{{ found.dateAdd|date('Y-m-d') }}{% endif %}</td>
+                <th>User</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td>{{ user.email }}</td>
             </tr>
             <tr>
                 <th>Description</th>
@@ -44,13 +48,15 @@
         <li>
             <a href="{{ path('found_index') }}">Back to the list</a>
         </li>
-        <li>
-            <a href="{{ path('found_edit', { 'id': found.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+        {% if user.id == currentUserId %}
+            <li>
+                <a href="{{ path('found_edit', { 'id': found.id }) }}">Edit</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        {% endif %}
     </ul>
 {% endblock %}

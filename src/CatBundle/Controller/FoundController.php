@@ -24,11 +24,17 @@ class FoundController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $founds = $em->getRepository('CatBundle:Found')->findAll();
+        if($this->getUser()) {
+            $currentUser = $this->getUser();
+            $currentUserId = $currentUser->getId();
+        } else {
+            $currentUserId = -1;
+        }
 
         return $this->render('found/index.html.twig', array(
             'founds' => $founds,
+            'currentUserId' => $currentUserId,
         ));
     }
 
@@ -45,6 +51,8 @@ class FoundController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user = $this->getUser();
+            $found->setUserId($user->getId());
             $em = $this->getDoctrine()->getManager();
             $em->persist($found);
             $em->flush($found);
@@ -67,10 +75,21 @@ class FoundController extends Controller
     public function showAction(Found $found)
     {
         $deleteForm = $this->createDeleteForm($found);
+        $userManager = $this->get('fos_user.user_manager');
+        $userId = $found->getUserId();
+        $user = $userManager->findUserBy(array('id'=> $userId));
+        if($this->getUser()) {
+            $currentUser = $this->getUser();
+            $currentUserId = $currentUser->getId();
+        } else {
+            $currentUserId = -1;
+        }
 
         return $this->render('found/show.html.twig', array(
             'found' => $found,
             'delete_form' => $deleteForm->createView(),
+            'user' => $user,
+            'currentUserId' => $currentUserId,
         ));
     }
 

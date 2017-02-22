@@ -33,9 +33,6 @@
                         <li>
                             <a href="{{ path('found_show', { 'id': found.id }) }}">show</a>
                         </li>
-                        <li>
-                            <a href="{{ path('found_edit', { 'id': found.id }) }}">edit</a>
-                        </li>
                     </ul>
                 </td>
             </tr>
@@ -43,9 +40,11 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('found_new') }}">Create a new found</a>
-        </li>
-    </ul>
+    {% if currentUserId > 0 %}
+        <ul>
+            <li>
+                <a href="{{ path('found_new') }}">Create a new found</a>
+            </li>
+        </ul>
+    {% endif %}
 {% endblock %}
