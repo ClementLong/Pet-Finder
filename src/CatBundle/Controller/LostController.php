@@ -5,7 +5,13 @@ namespace CatBundle\Controller;
 use CatBundle\Entity\Lost;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use FOS\UserBundle\FOSUserEvents;
+use FOS\UserBundle\Event\GetResponseUserEvent;
+use FOS\UserBundle\Model\UserInterface;
+use FOS\UserBundle\Model\UserManagerInterface;
+use FOS\UserBundle\Model\UserManager;
 
 /**
  * Lost controller.
@@ -44,6 +50,8 @@ class LostController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user = $this->getUser();
+            $lost->setUserId($user->getId());
             $em = $this->getDoctrine()->getManager();
             $em->persist($lost);
             $em->flush($lost);
@@ -66,10 +74,14 @@ class LostController extends Controller
     public function showAction(Lost $lost)
     {
         $deleteForm = $this->createDeleteForm($lost);
+        $userManager = $this->get('fos_user.user_manager');
+        $userId = $lost->getUserId();
+        $user = $userManager->findUserBy(array('id'=> $userId));
 
         return $this->render('lost/show.html.twig', array(
             'lost' => $lost,
             'delete_form' => $deleteForm->createView(),
+            'user' => $user,
         ));
     }
 

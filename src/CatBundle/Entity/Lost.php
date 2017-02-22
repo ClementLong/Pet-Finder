@@ -95,6 +95,13 @@ class Lost
     private $updatedAt;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(type="integer")
+     */
+    private $userId;
+
+    /**
      * Get id
      *
      * @return int
@@ -322,6 +329,30 @@ class Lost
     public function getImageName()
     {
         return $this->imageName;
+    }
+
+    /**
+     * Set user id
+     *
+     * @param int $userId
+     *
+     * @return Lost
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get user id
+     *
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->userId;
     }
 }
 
