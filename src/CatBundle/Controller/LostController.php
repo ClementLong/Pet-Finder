@@ -24,11 +24,18 @@ class LostController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $losts = $em->getRepository('CatBundle:Lost')->findAll();
+        if($this->getUser()) {
+            $currentUser = $this->getUser();
+            $currentUserId = $currentUser->getId();
+        } else {
+            $currentUserId = -1;
+        }
+
 
         return $this->render('lost/index.html.twig', array(
             'losts' => $losts,
+            'currentUserId' => $currentUserId,
         ));
     }
 
