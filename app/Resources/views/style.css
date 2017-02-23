@@ -1,5 +1,6 @@
 body {
   background: #984866;
+  overflow-x: hidden;
 }
 
 /*HEADER*/
@@ -21,22 +22,26 @@ header img {
 /*SIDES BANNER*/
 
 #left-side {
-  width: 223px;
-  background: url('imgs/left-banner.png') center top no-repeat;
+  width: 223px !important;
+  background: url('imgs/left-banner.png') center center no-repeat;
   background-size: 100%;
+  padding: 0;
+  float: left;
 }
 
 #right-side {
-  width: 223px;
-  background: url('imgs/right-banner.png') center top no-repeat;
+  width: 238px !important;
+  background: url('imgs/right-banner.png') center center no-repeat;
   background-size: 100%;
+  padding: 0;
+  float: left;
 }
 
 /*HOMEPAGE*/
 
 .main__content {
   padding-top: 50px;
-  width: calc(100% - 446px);
+  width: calc(100vw - 446px);
 }
 
 .button_container h4 {
@@ -85,12 +90,11 @@ header img {
 }
 
 
-.main__aside_left, .main__aside_right {
+/*.main__aside_left, .main__aside_right {
   height: 100vh;
-  /*width: 20vw;*/
   float: left;
   background: url('https://i.ytimg.com/vi/u9UaPvVs3hc/maxresdefault.jpg') no-repeat left left;
-}
+}*/
 
 .main__content {
   background-color: white;
