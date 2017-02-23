@@ -1,3 +1,7 @@
+body {
+  background: #984866;
+}
+
 /*HEADER*/
 
 header {
@@ -17,28 +21,22 @@ header img {
 /*SIDES BANNER*/
 
 #left-side {
-  position: fixed;
-  left: 0;
-  z-index: 1;
-  top:0;
-  background: url('imgs/left-banner.png') center top no-repeat ;
+  width: 223px;
+  background: url('imgs/left-banner.png') center top no-repeat;
   background-size: 100%;
 }
 
 #right-side {
-  position: fixed;
-  right:0;
-  z-index: 1;
-
-  top:0;
-  background: url('imgs/right-banner.png') center top no-repeat ;
+  width: 223px;
+  background: url('imgs/right-banner.png') center top no-repeat;
   background-size: 100%;
 }
+
 /*HOMEPAGE*/
 
 .main__content {
   padding-top: 50px;
-  margin-left: 16.67vw;
+  width: calc(100% - 446px);
 }
 
 .button_container h4 {
