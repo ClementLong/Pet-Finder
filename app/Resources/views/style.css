@@ -259,7 +259,6 @@ a.control_next {
 /*RESULTPAGE*/
 
 #table-content {
-  height: 100vh;
   width: calc(100vw - 446px);
   overflow: scroll;
   padding: 0px;
@@ -299,10 +298,15 @@ a.control_next {
   letter-spacing: 0.1em;
 }
 th {
+  font-family: 'Passion One', cursive;
+  font-size: 1.2em;
+  font-weight: bolder;
   background-color: #FEE3BC;
 
 }
 td {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.1em;
   background-color: #FFF0DB;
 }
 
