@@ -23,7 +23,9 @@ header img {
 
 #left-side {
   width: 223px !important;
-  background: url('imgs/left-banner.png') center center no-repeat;
+  height: 130vh;
+  background: url('imgs/left-banner.png') center top no-repeat;
+  background-color: #984866;
   background-size: 100%;
   padding: 0;
   float: left;
@@ -31,7 +33,9 @@ header img {
 
 #right-side {
   width: 238px !important;
-  background: url('imgs/right-banner.png') center center no-repeat;
+  height: 130vh;
+  background: url('imgs/right-banner.png') center top no-repeat;
+  background-color: #984866;
   background-size: 100%;
   padding: 0;
   float: left;
@@ -253,11 +257,6 @@ a.control_next {
 }
 
 /*RESULTPAGE*/
-
-#left-side, #right-side {
-  height: 100vh;
-  background-color: #CE5993;
-}
 
 #table-content {
   height: 100vh;
