@@ -25,7 +25,7 @@ class FoundController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $founds = $em->getRepository('CatBundle:Found')->findAll();
-        if($this->getUser()) {
+        if ($this->getUser()) {
             $currentUser = $this->getUser();
             $currentUserId = $currentUser->getId();
         } else {
@@ -78,7 +78,7 @@ class FoundController extends Controller
         $userManager = $this->get('fos_user.user_manager');
         $userId = $found->getUserId();
         $user = $userManager->findUserBy(array('id'=> $userId));
-        if($this->getUser()) {
+        if ($this->getUser()) {
             $currentUser = $this->getUser();
             $currentUserId = $currentUser->getId();
         } else {

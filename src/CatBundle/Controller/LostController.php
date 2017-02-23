@@ -25,7 +25,7 @@ class LostController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $losts = $em->getRepository('CatBundle:Lost')->findAll();
-        if($this->getUser()) {
+        if ($this->getUser()) {
             $currentUser = $this->getUser();
             $currentUserId = $currentUser->getId();
         } else {
@@ -79,7 +79,7 @@ class LostController extends Controller
         $userManager = $this->get('fos_user.user_manager');
         $userId = $lost->getUserId();
         $user = $userManager->findUserBy(array('id'=> $userId));
-        if($this->getUser()) {
+        if ($this->getUser()) {
             $currentUser = $this->getUser();
             $currentUserId = $currentUser->getId();
         } else {
