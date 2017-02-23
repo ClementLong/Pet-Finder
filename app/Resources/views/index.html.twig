@@ -1,6 +1,19 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FindYourCat</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Passion+One|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body class="home-body">
+    {% include 'partials/header.html.twig' %}
+    <header>
+      <img src="imgs/logo.png" alt="">
+    </header>
     <div class="row">
 
       <div class="main__aside_left" id="left-side"></div>
@@ -91,4 +104,6 @@
       </div>
       <div class="main__aside_right" id="right-side"></div>
     </div>
-{% endblock %}
+  </body>
+  <script src="scripts/script.js"></script>
+</html>
