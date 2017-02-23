@@ -42,9 +42,11 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('lost_new') }}">Create a new lost</a>
-        </li>
-    </ul>
+    {% if currentUserId > 0 %}
+        <ul>
+            <li>
+                <a href="{{ path('lost_new') }}">Create a new lost</a>
+            </li>
+        </ul>
+    {% endif %}
 {% endblock %}
