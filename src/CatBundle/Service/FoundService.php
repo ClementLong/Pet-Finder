@@ -16,5 +16,4 @@ class FoundService
     {
         return $user->getId() == $found->getUserId();
     }
-
 }
