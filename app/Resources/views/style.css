@@ -260,6 +260,9 @@ a.control_next {
 }
 
 .go-back {
+  font-family: 'Passion One', cursive;
+  font-size: 1.6em;
+  letter-spacing: 0.1em;
   cursor: pointer;
   color: #44529D;
   position: absolute;
@@ -278,13 +281,16 @@ a.control_next {
 }
 
 .caption {
+  font-family: 'Passion One', cursive;
   color: #EE6F21;
   text-align: right;
   margin-right: 2em;
-  font-size: 1.4em;
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
 }
 th {
   background-color: #FEE3BC;
+
 }
 td {
   background-color: #FFF0DB;
