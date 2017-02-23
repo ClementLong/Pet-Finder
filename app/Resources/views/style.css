@@ -108,9 +108,9 @@ header img {
 #slider ul {
   position: relative;
   margin: 0;
-  margin-top: 40px;
+  /*margin-top: 40px;*/
   padding: 0;
-  height: 200px;
+  height: 500px;
   list-style: none;
 }
 
