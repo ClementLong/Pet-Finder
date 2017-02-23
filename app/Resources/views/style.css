@@ -259,6 +259,10 @@ a.control_next {
   padding: 0px;
 }
 
+#table-content::-webkit-scrollbar {
+    display: none;
+}
+
 .go-back {
   font-family: 'Passion One', cursive;
   font-size: 1.6em;
