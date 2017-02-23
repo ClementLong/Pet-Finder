@@ -1,10 +1,36 @@
 {% extends 'base.html.twig' %}
-
+{% set page = 'home' %}
 {% block body %}
-    <h1>Home</h1>
-    Feature
-    <ul>
-        <li>List des derniers chat perdus</li>
-        <li>List des derniers chat trouvé</li>
-    </ul>
+    <div class="row">
+
+      <div class="main__aside_left" id="left-side"></div>
+      <div class="main__content col-md-8">
+
+        <div id="slider">
+          <a href="#" class="control_next">></a>
+          <a href="#" class="control_prev"><</a>
+          <ul>
+            <li><img src="imgs/slides/slide_1.png" alt=""></li>
+            <li><img src="imgs/slides/slide_2.png" alt=""></li>
+            <li><img src="imgs/slides/slide_3.png" alt=""></li>
+            <li><img src="imgs/slides/slide_4.png" alt=""></li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <div class="col-md-1"></div>
+          <a href="#"><div class="col-md-4 button_container">
+            <h4><a class='link_to_page' href="{{ url('lost_new') }}">Poster un chat</a></h4>
+          </div>
+          </a>
+          <div class="col-md-2"></div>
+          <a href="#"><div class="col-md-4 button_container">
+            <h4><a class='link_to_page' href="{{ url('lost_index') }}">Liste des chats perdus</a></h4>
+          </div></a>
+          <div class="col-md-1"></div>
+        </div>
+
+      </div>
+      <div class="main__aside_right" id="right-side"></div>
+    </div>
 {% endblock %}

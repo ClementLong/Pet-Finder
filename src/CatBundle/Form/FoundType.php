@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class FoundType extends AbstractType
 {
@@ -22,9 +22,9 @@ class FoundType extends AbstractType
                 ->add('dateFound')
                 ->add('description')
                 ->add('imageFile', FileType::class)
-        ;
+                ->add('submit', SubmitType::class, array('label' => 'Rajouter un chat'));
     }
-    
+
     /**
      * {@inheritdoc}
      */

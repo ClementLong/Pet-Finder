@@ -1,10 +1,13 @@
 {% extends 'base.html.twig' %}
-
+{% set page = 'login' %}
 {% block body %}
-    <h1>Losts list</h1>
-
-    <table>
-        <thead>
+<div class="row">
+  <div class="col-md-2" id="left-side"></div>
+  <div class="col-md-8" id="table-content">
+    <a href="#" class="go-back">Go back</a>
+    <table class="table table-bordered">
+        <caption class="caption">Missing cats</caption>
+        <thead class="thead">
             <tr>
                 <th>Id</th>
                 <th>Name</th>
@@ -21,7 +24,7 @@
         <tbody>
         {% for lost in losts %}
             <tr>
-                <td><a href="{{ path('lost_show', { 'id': lost.id }) }}">{{ lost.id }}</a></td>
+                <th scope="row"><a href="{{ path('lost_show', { 'id': lost.id }) }}">{{ lost.id }}</a></th>
                 <td>{{ lost.name }}</td>
                 <td>{{ lost.contact }}</td>
                 <td>{{ lost.country }}</td>
@@ -41,6 +44,8 @@
         {% endfor %}
         </tbody>
     </table>
+  </div>
+</div>
 
     {% if currentUserId > 0 %}
         <ul>

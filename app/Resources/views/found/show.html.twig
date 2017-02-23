@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
-
+{% set page='show' %}
 {% block body %}
-    <h1>Found</h1>
+    <h1>found</h1>
 
     <table>
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ found.id }}</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td>{{ found.contact }}</td>
             </tr>
             <tr>
                 <th>Country</th>
@@ -22,20 +26,20 @@
                 <td>{{ found.address }}</td>
             </tr>
             <tr>
-                <th>Contact</th>
-                <td>{{ found.contact }}</td>
-            </tr>
-            <tr>
-                <th>Datefound</th>
-                <td>{% if found.dateFound %}{{ found.dateFound|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
                 <th>User</th>
                 <td>{{ user.username }}</td>
             </tr>
             <tr>
                 <th>Contact</th>
                 <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Datefound</th>
+                <td>{% if found.datefound %}{{ found.datefound|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{ vich_uploader_asset(found, 'imageFile') }}" alt="{{ found.imageName }}"></td>
             </tr>
             <tr>
                 <th>Description</th>

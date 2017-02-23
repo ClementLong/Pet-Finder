@@ -2,14 +2,21 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Help Cat{% endblock %}</title>
+        <title>{% block title %}Help the cats!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link href="{{ asset('styles/reset.css') }}" rel="stylesheet" />
+        <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Passion+One|Roboto" rel="stylesheet">
+        <link href="{{ asset('styles/style.css') }}" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
-    <body>
+    <body class='{{page}}'>
         {% include 'partials/header.html.twig' %}
         {% block body %}{% endblock %}
-        {% include 'partials/footer.html.twig' %}
+
         {% block javascripts %}{% endblock %}
     </body>
+    <script src="{{ asset('scripts/script.js') }}"></script>
 </html>
