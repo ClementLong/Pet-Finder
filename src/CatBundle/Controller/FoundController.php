@@ -105,7 +105,7 @@ class FoundController extends Controller
             return $this->redirectToRoute('lost_index');
         }
 
-        if ($this->getUser()->getId() != $found->getUserId()) {
+        if (!$this->get('FoundService')->hasAccess($this->getUser(), $found)) {
             return $this->redirectToRoute('lost_index');
         }
 
@@ -138,7 +138,7 @@ class FoundController extends Controller
             return $this->redirectToRoute('lost_index');
         }
 
-        if ($this->getUser()->getId() != $found->getUserId()) {
+        if (!$this->get('FoundService')->hasAccess($this->getUser(), $found)) {
             return $this->redirectToRoute('lost_index');
         }
 

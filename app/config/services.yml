@@ -6,3 +6,5 @@ parameters:
 services:
     FoundService:
         class: CatBundle\Service\FoundService
+    LostService:
+        class: CatBundle\Service\LostService

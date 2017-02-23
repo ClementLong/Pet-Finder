@@ -3,21 +3,21 @@
 namespace CatBundle\Service;
 
 use AppBundle\Entity\User;
-use CatBundle\Entity\Found;
+use CatBundle\Entity\Lost;
 
-class FoundService
+class LostService
 {
     /**
      * @param User $user
-     * @param Found $found
+     * @param Lost $lost
      * @return bool
      */
-    public function hasAccess(User $user, Found $found)
+    public function hasAccess(User $user, Lost $lost)
     {
         if (in_array('ROLE_ADMIN', $user->getRoles())) {
             return true;
         }
-        
-        return $user->getId() == $found->getUserId();
+
+        return $user->getId() == $lost->getUserId();
     }
 }
