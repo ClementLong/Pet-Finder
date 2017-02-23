@@ -392,3 +392,9 @@ div > form > h2.form-signin-heading{
   background-color: #FFF0DB;
   outline: none;
 }
+
+.login_link {
+  display: block;
+  margin-top: 10px;
+  color: #984866;
+}
