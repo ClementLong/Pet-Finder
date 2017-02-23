@@ -101,6 +101,14 @@ class FoundController extends Controller
      */
     public function editAction(Request $request, Found $found)
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('lost_index');
+        }
+
+        if ($this->getUser()->getId() != $found->getUserId()) {
+            return $this->redirectToRoute('lost_index');
+        }
+
         $deleteForm = $this->createDeleteForm($found);
         $editForm = $this->createForm('CatBundle\Form\FoundType', $found);
         $editForm->handleRequest($request);
@@ -126,6 +134,14 @@ class FoundController extends Controller
      */
     public function deleteAction(Request $request, Found $found)
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('lost_index');
+        }
+
+        if ($this->getUser()->getId() != $found->getUserId()) {
+            return $this->redirectToRoute('lost_index');
+        }
+
         $form = $this->createDeleteForm($found);
         $form->handleRequest($request);
 
