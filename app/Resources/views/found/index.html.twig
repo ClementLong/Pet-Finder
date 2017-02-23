@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% set page = 'found' %}
+{% block body %}
+<div class="row">
+  <div class="col-md-2" id="left-side"></div>
+  <div class="col-md-8" id="table-content">
+    <a href="#" class="go-back">Go back</a>
+    <table class="table table-bordered">
+        <caption class="caption">Missing cats</caption>
+        <thead class="thead">
+            <tr>
+                <th>Id</th>
+                <th>Contact</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Datefound</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for found in founds %}
+            <tr>
+                <th scope="row"><a href="{{ path('found_show', { 'id': found.id }) }}">{{ found.id }}</a></th>
+                <td>{{ found.contact }}</td>
+                <td>{{ found.country }}</td>
+                <td>{{ found.city }}</td>
+                <td>{{ found.address }}</td>
+                <td>{% if found.dateFound %}{{ found.dateFound|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ found.description }}</td>
+                <td><img src="{{ vich_uploader_asset(found, 'imageFile') }}" alt="{{ found.imageName }}"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('found_show', { 'id': found.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="col-md-4 button_container">
+      <h4><a class='link_to_page' href="{{ url('found_new') }}">J'ai trouvé mon chat</a></h4>
+    </div>
+  </div>
+</div>
+
+    {% if currentUserId > 0 %}
+        <ul>
+            <li>
+                <a href="{{ path('found_new') }}">Create a new found</a>
+            </li>
+        </ul>
+    {% endif %}
+{% endblock %}

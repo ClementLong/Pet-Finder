@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+{% set page = 'add' %}
+{% block body %}
+  <div class="main__content col-md-12 edit_formChat">
+    <h5>FORMULAIRE CHAT PERDU</h5>
+    <h5>Nom / Adresse / Date</h5>
+
+    <div class="container_info">
+      {{ form_start(edit_form) }}
+      <div class="info_left">
+        <p>Nom</p>
+        <span>Obligatoire</span>
+      </div>
+
+      <div class="info_right">
+        {{ form_widget(edit_form.name) }}
+      </div>
+
+      <div class="container_info">
+        <div class="info_left">
+          <p>Adresse</p>
+          <span>Obligatoire</span>
+        </div>
+
+        <div class="info_right">
+          <div>
+            <p>Adresse</p>
+            {{ form_widget(edit_form.address) }}
+          </div>
+          <div>
+            <p>Ville</p>
+            {{ form_widget(edit_form.city) }}
+          </div>
+          <div>
+            <p>Pays</p>
+            {{ form_widget(edit_form.country) }}
+          </div>
+        </div>
+      </div>
+
+      <div class="container_info">
+        <div class="info_left">
+          <p>Date</p>
+          <span>Obligatoire</span>
+        </div>
+
+        <div class="info_right">
+          {{ form_widget(edit_form.dateLost) }}
+        </div>
+      </div>
+
+      <h5>Contact</h5>
+      <div class="container_info">
+        <div class="info_left">
+          <p>Contact</p>
+          <span>Obligatoire</span>
+        </div>
+
+        <div class="info_right">
+          {{ form_widget(edit_form.contact) }}
+        </div>
+      </div>
+      <h5>Description</h5>
+      <div class="container_info">
+        <div class="info_left">
+          <p>Description</p>
+          <span>Obligatoire</span>
+        </div>
+
+        <div class="info_right">
+          {{ form_widget(edit_form.description) }}
+        </div>
+      </div>
+      <div class="container_info">
+        <div class="info_left">
+          <p>Image</p>
+          <span>Obligatoire</span>
+        </div>
+
+        <div class="info_right">
+          {{ form_widget(edit_form.imageFile) }}
+        </div>
+      </div>
+      {{ form_widget(edit_form.submit) }}
+    </div>
+  {{ form_end(edit_form) }}
+  </div>
+{% endblock %}

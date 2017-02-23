@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+{% set page = 'login' %}
+{% block body %}
+  <div class="main__content col-md-12 formChat">
+    <h5>FORMULAIRE CHAT PERDU</h5>
+    <h5>Nom / Adresse / Date</h5>
+
+    <div class="container_info">
+      {{ form_start(form) }}
+      <div class="info_left">
+        <p>Nom</p>
+        <span>Obligatoire</span>
+      </div>
+
+      <div class="info_right">
+        {{ form_widget(form.name) }}
+      </div>
+
+      <div class="container_info">
+        <div class="info_left">
+          <p>Adresse</p>
+          <span>Obligatoire</span>
+        </div>
+
+        <div class="info_right">
+          <div>
+            <p>Adresse</p>
+            {{ form_widget(form.address) }}
+          </div>
+          <div>
+            <p>Ville</p>
+            {{ form_widget(form.city) }}
+          </div>
+          <div>
+            <p>Pays</p>
+            {{ form_widget(form.country) }}
+          </div>
+        </div>
+      </div>
+
+      <div class="container_info">
+        <div class="info_left">
+          <p>Date</p>
+          <span>Obligatoire</span>
+        </div>
+
+        <div class="info_right">
+          {{ form_widget(form.dateLost) }}
+        </div>
+      </div>
+
+      <h5>Contact</h5>
+      <div class="container_info">
+        <div class="info_left">
+          <p>Contact</p>
+          <span>Obligatoire</span>
+        </div>
+
+        <div class="info_right">
+          {{ form_widget(form.contact) }}
+        </div>
+      </div>
+      <h5>Description</h5>
+      <div class="container_info">
+        <div class="info_left">
+          <p>Description</p>
+          <span>Obligatoire</span>
+        </div>
+
+        <div class="info_right">
+          {{ form_widget(form.description) }}
+        </div>
+      </div>
+      <div class="container_info">
+        <div class="info_left">
+          <p>Image</p>
+          <span>Obligatoire</span>
+        </div>
+
+        <div class="info_right">
+          {{ form_widget(form.imageFile) }}
+        </div>
+      </div>
+      {{ form_widget(form.submit) }}
+    </div>
+  {{ form_end(form) }}
+  </div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% set page = 'login' %}
+{% block body %}
+<div class="row">
+  <div class="col-md-2" id="left-side"></div>
+  <div class="col-md-8" id="table-content">
+    <a href="#" class="go-back">Go back</a>
+    <table class="table table-bordered">
+        <caption class="caption">Missing cats</caption>
+        <thead class="thead">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Datelost</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lost in losts %}
+            <tr>
+                <th scope="row"><a href="{{ path('lost_show', { 'id': lost.id }) }}">{{ lost.id }}</a></th>
+                <td>{{ lost.name }}</td>
+                <td>{{ lost.contact }}</td>
+                <td>{{ lost.country }}</td>
+                <td>{{ lost.city }}</td>
+                <td>{{ lost.address }}</td>
+                <td>{% if lost.dateLost %}{{ lost.dateLost|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ lost.description }}</td>
+                <td><img src="{{ vich_uploader_asset(lost, 'imageFile') }}" alt="{{ lost.imageName }}"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('lost_show', { 'id': lost.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="col-md-4 button_container">
+      <h4><a class='link_to_page' href="{{ url('lost_new') }}">J'ai perdu mon chat</a></h4>
+    </div>
+  </div>
+</div>
+
+    {% if currentUserId > 0 %}
+        <ul>
+            <li>
+                <a href="{{ path('lost_new') }}">Create a new lost</a>
+            </li>
+        </ul>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+{% set page='show' %}
+{% block body %}
+    <h1>Lost</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ lost.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ lost.name }}</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td>{{ lost.contact }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ lost.country }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ lost.city }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ lost.address }}</td>
+            </tr>
+            <tr>
+                <th>User</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Datelost</th>
+                <td>{% if lost.dateLost %}{{ lost.dateLost|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{ vich_uploader_asset(lost, 'imageFile') }}" alt="{{ lost.imageName }}"></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ lost.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lost_index') }}">Back to the list</a>
+        </li>
+        {% if user.id == currentUserId %}
+            <li>
+                <a href="{{ path('lost_edit', { 'id': lost.id }) }}">Edit</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        {% endif %}
+    </ul>
+{% endblock %}
