@@ -1,6 +1,11 @@
 body {
   height: 100vh;
   background-color: #FFF0DB;
+  font-family: 'Roboto', sans-serif;;
+}
+
+h1, h2, h3{
+  font-family: 'Passion One', cursive;;
 }
 
 div > form > h2.form-signin-heading{
