@@ -40,6 +40,8 @@ header img {
 }
 
 .button_container h4 {
+  font-family: 'Passion One', cursive;
+  letter-spacing: 0.1em;
   background: #FEFEFE;
   text-align: center;
   height: 50px;
@@ -122,13 +124,13 @@ header img {
   padding: 0;
   width: 50vw;
   height: 500px;
-  background: #ccc;
   text-align: center;
   line-height: 500px;
 }
 
 #slider ul li img {
-  height: 500px;
+  max-height: 100%;
+  max-width: 100%
 }
 
 a.control_prev, a.control_next {
