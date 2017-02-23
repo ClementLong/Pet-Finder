@@ -260,6 +260,7 @@ a.control_next {
 
 #table-content {
   height: 100vh;
+  width: calc(100vw - 446px);
   overflow: scroll;
   padding: 0px;
 }
