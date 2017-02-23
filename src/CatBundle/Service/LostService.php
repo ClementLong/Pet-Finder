@@ -12,8 +12,12 @@ class LostService
      * @param Lost $lost
      * @return bool
      */
-    public function isUser(User $user, Lost $lost)
+    public function hasAccess(User $user, Lost $lost)
     {
+        if (in_array('ROLE_ADMIN', $user->getRoles())) {
+            return true;
+        }
+
         return $user->getId() == $lost->getUserId();
     }
 }

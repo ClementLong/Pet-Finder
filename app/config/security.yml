@@ -23,4 +23,3 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/lost/new, role: ROLE_USER }
-        - { path: ^/admin/, role: ROLE_ADMIN }

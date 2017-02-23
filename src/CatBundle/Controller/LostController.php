@@ -106,7 +106,7 @@ class LostController extends Controller
             return $this->redirectToRoute('lost_index');
         }
 
-        if (!$this->get('LostService')->isUser($this->getUser(), $lost)) {
+        if (!$this->get('LostService')->hasAccess($this->getUser(), $lost)) {
             return $this->redirectToRoute('lost_index');
         }
 
@@ -139,7 +139,7 @@ class LostController extends Controller
             return $this->redirectToRoute('lost_index');
         }
 
-        if (!$this->get('LostService')->isUser($this->getUser(), $lost)) {
+        if (!$this->get('LostService')->hasAccess($this->getUser(), $lost)) {
             return $this->redirectToRoute('lost_index');
         }
 

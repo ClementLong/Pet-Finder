@@ -12,8 +12,12 @@ class FoundService
      * @param Found $found
      * @return bool
      */
-    public function isUser(User $user, Found $found)
+    public function hasAccess(User $user, Found $found)
     {
+        if (in_array('ROLE_ADMIN', $user->getRoles())) {
+            return true;
+        }
+        
         return $user->getId() == $found->getUserId();
     }
 }
