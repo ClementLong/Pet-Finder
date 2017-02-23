@@ -102,6 +102,14 @@ class LostController extends Controller
      */
     public function editAction(Request $request, Lost $lost)
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('lost_index');
+        }
+
+        if ($this->getUser()->getId() != $lost->getUserId()) {
+            return $this->redirectToRoute('lost_index');
+        }
+
         $deleteForm = $this->createDeleteForm($lost);
         $editForm = $this->createForm('CatBundle\Form\LostType', $lost);
         $editForm->handleRequest($request);
@@ -127,6 +135,14 @@ class LostController extends Controller
      */
     public function deleteAction(Request $request, Lost $lost)
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('lost_index');
+        }
+
+        if ($this->getUser()->getId() != $lost->getUserId()) {
+            return $this->redirectToRoute('lost_index');
+        }
+
         $form = $this->createDeleteForm($lost);
         $form->handleRequest($request);
 

@@ -5,4 +5,4 @@ parameters:
 
 services:
     FoundService:
-        class: \CatBundle\Service\FoundService
+        class: CatBundle\Service\FoundService
