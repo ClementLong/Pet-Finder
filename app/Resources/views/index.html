@@ -6,21 +6,102 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </head>
-  <body>
+  <body class="home-body">
     <header>
-      <!-- HEADER CONTENT -->
+      <img src="imgs/logo.png" alt="">
     </header>
-    <nav>
-      <!--  NAV CONTENT -->
-    </nav>
     <div class="row">
-      <div class="main__backgroun_left col-md-1"></div>
-      <div class="main__aside_left col-md-1"></div>
-      <div class="main__content_left col-md-4"></div>
-      <div class="main__content_right col-md-4"></div>
-      <div class="main__aside_right col-md-1"></div>
-      <div class="main__background_right col-md-1"></div>
+
+      <div class="main__aside_left col-md-2" id="left-side"></div>
+      <div class="main__content col-md-8">
+
+        <div id="slider">
+          <a href="#" class="control_next">></a>
+          <a href="#" class="control_prev"><</a>
+          <ul>
+            <li>SLIDE 1</li>
+            <li style="background: #aaa;">SLIDE 2</li>
+            <li>SLIDE 3</li>
+            <li style="background: #aaa;">SLIDE 4</li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <div class="col-md-1"></div>
+          <a href="#"><div class="col-md-4 button_container">
+            <h4>Poster un chat</h4>
+          </div>
+          </a>
+          <div class="col-md-2"></div>
+          <a href="#"><div class="col-md-4 button_container">
+            <h4>Retrouver un chat</h4>
+          </div></a>
+          <div class="col-md-1"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-4 sub_container">
+            <div class="sub_container_header">
+              <h3>Annonces Récentes</h3>
+            </div>
+            <div class="ann_container">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-5 sub_container">
+            <div class="sub_container_header">
+              <h3>Derniers chats retrouvés</h3>
+            </div>
+            <div class="ann_container">
+              <div class="ann">
+                <div class="ann_img"></div>
+                <div class="ann_info">
+                  <h3>Name: YOLO</h3>
+                  <h3>Country: YOLO</h3>
+                  <h3>City: YOLO</h3>
+                </div>
+              </div>
+
+              <div class="ann">
+                <div class="ann_img"></div>
+                <div class="ann_info">
+                  <h3>Name: YOLO</h3>
+                  <h3>Country: YOLO</h3>
+                  <h3>City: YOLO</h3>
+                </div>
+              </div>
+
+              <div class="ann">
+                <div class="ann_img"></div>
+                <div class="ann_info">
+                  <h3>Name: YOLO</h3>
+                  <h3>Country: YOLO</h3>
+                  <h3>City: YOLO</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+
+
+        <section id="hdiw">
+          <h3>Comment ça marche</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+
+        <footer class="footer">© - FindYourCat</footer>
+      </div>
+      <div class="main__aside_right col-md-2" id="right-side"></div>
     </div>
   </body>
+  <script src="script.js"></script>
 </html>
